@@ -4,6 +4,8 @@ import { CgProfile } from "react-icons/cg";
 import { MdScreenSearchDesktop, MdTaskAlt } from "react-icons/md";
 import { IoMdSchool } from "react-icons/io";
 import {assests} from '../../assest/assest.js'
+import { IoIosLogOut } from "react-icons/io";
+import { FaIdCardClip } from "react-icons/fa6";
 import Image from 'next/image';
 
 const menuItems = [
@@ -31,12 +33,12 @@ const menuItems = [
     {
     title: "Get Card",
     path: "/volunteer/dashboard/getCard",
-    icon: <MdTaskAlt />,
+    icon: <FaIdCardClip />,
   },
     {
     title: "Logout",
     path: "/",
-    icon: <MdTaskAlt />,
+    icon: <IoIosLogOut />,
   },
 
 ];
