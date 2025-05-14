@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { JSX } from 'react';
+
 
 const Login = () => {
   const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: "",
-    roll: "",
+    cnic: "",
     email: "",
     password: "",
   });
@@ -21,9 +21,9 @@ const Login = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { name, roll, email, password } = formData;
+    const { name, cnic, email, password } = formData;
 
-    if (!name || !roll || !email || !password) {
+    if (!name || !cnic || !email || !password) {
       alert("Please fill in all fields.");
       return;
     }
@@ -42,20 +42,21 @@ const Login = () => {
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
+            name="cnic"
+            value={formData.cnic}
+            onChange={handleChange}
+            placeholder="CNIC"
+            className="w-full px-4 py-2 border border-gray-300 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:text-gray-700"
+          />
+          <input
+            type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name"
             className="w-full px-4 py-2 border border-gray-300 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:text-gray-700"
           />
-          <input
-            type="text"
-            name="roll"
-            value={formData.roll}
-            onChange={handleChange}
-            placeholder="Roll Number"
-            className="w-full px-4 py-2 border border-gray-300 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:text-gray-700"
-          />
+         
           <input
             type="email"
             name="email"

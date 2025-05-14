@@ -1,5 +1,4 @@
-.sidebar {
-    /* width: 240px; */
+/* .sidebar {
     height: 100vh;
     background-color: #ffffff;
     color: var(--text);
@@ -88,6 +87,6 @@
     }
   
     .title {
-      display: none; /* Optional: Hide title on small screens for compact view */
+      display: none; 
     }
-  }
+  } */

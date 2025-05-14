@@ -1,18 +1,18 @@
+// 
+
+
 'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import './notification.css';
 import { assests } from '../../assest/assest';
 import { RxCrossCircled } from 'react-icons/rx';
 
-// Define the shape of a volunteer object
 interface Volunteer {
   name: string;
   description: string;
 }
 
-// Initial data typed correctly
 const initialVolunteers: Volunteer[] = [
   { name: 'Muhammad Ali', description: 'Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.' },
   { name: 'Muhammad Ali', description: 'Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.' },
@@ -31,28 +31,31 @@ const Notification: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className="flex flex-col gap-4 p-5 items-center bg-[#f5f7f7]">
       {volunteers.map((volunteer, index) => (
-        <div key={index} className="card">
-          <div className="profileSection">
+        <div
+          key={index}
+          className="bg-white w-full max-w-[700px] rounded-md p-4 shadow-sm flex justify-between items-center flex-wrap sm:flex-nowrap"
+        >
+          <div className="flex items-center gap-4 flex-1 flex-wrap sm:flex-nowrap min-w-0">
             <Image
               src={assests.profile_img}
               alt="profile"
               width={50}
               height={50}
-              className="avatar"
+              className="rounded-full shrink-0"
             />
-            <div>
-              <h3 className="name">{volunteer.name}</h3>
-              <p className="description">{volunteer.description}</p>
+            <div className="min-w-0">
+              <h3 className="m-0 font-bold text-gray-800">{volunteer.name}</h3>
+              <p className="text-sm text-gray-600 break-words">{volunteer.description}</p>
             </div>
           </div>
           <button
             onClick={() => handleDelete(index)}
-            className="iconButton"
+            className="bg-transparent border-none p-1 hover:text-red-500 transition-colors"
             aria-label="Delete notification"
           >
-            <RxCrossCircled className="icon" />
+            <RxCrossCircled className="text-2xl text-gray-500 hover:text-red-500" />
           </button>
         </div>
       ))}
